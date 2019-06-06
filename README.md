@@ -1,2 +1,2 @@
-# wastc
+# WASTC Content
 WASTC Content
