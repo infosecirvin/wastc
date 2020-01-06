@@ -1,0 +1,47 @@
+Steps to create SecGen machine
+
+1. Create virtual machine with Ubuntu 18.04.2
+	Give at least dual core to quad core CPU
+	Enable virtualization
+	At least 100GB Hard Drive thin provision
+2. Login and open Terminal.
+3. Run the following commands:
+	sudo apt update -y
+	sudo apt upgrade -y
+	sudo apt install git open-vm-tools-desktop -y
+	sudo reboot
+4. Open browser and go to:
+	https://github.com/cliffe/SecGen/
+5. Run the following commands in terminal:	
+	wget https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.deb
+	sudo apt install ./vagrant_2.2.4_x86_64.deb
+	sudo apt-get install ruby-dev zlib1g-dev liblzma-dev build-essential patch virtualbox ruby-bundler imagemagick libmagickwand-dev exiftool libpq-dev libcurl4-openssl-dev libxml2-dev graphviz graphviz-dev libpcap0.8-dev
+
+6. Clone the project to your home folder:
+	git clone https://github.com/cliffe/SecGen/
+	cd SecGen
+	bundle install
+	FAILS ASKING FOR PACKETFU!
+	bundle update packetfu
+	FAILS TO SCRYPT
+	bundle update rake
+	bundle update packetfu
+	bundle install
+7. Run the following command in terminal:
+	ruby secgen.rb run
+8. cd projects/SEC*****
+	In the projects directory:
+	vagrant up 				#Start VM
+	vagrant halt 				#Shutdown VM
+	vagrant destroy -f			#Destroy VM
+9. Open virtual-manager
+	File->Export Appliance
+	
+ruby secgen.rb --scenario scenarios/myscenarios/my_secenario.xml run
+
+
+Basic Machine Tweaks
+1. Import into VMware Workstation - Click Retry if prompted
+2. Remove second NIC
+3. Downgrade hardware compatiblity to hardware 11.
+	Alter the virtual machine.
